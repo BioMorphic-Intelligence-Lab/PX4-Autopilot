@@ -19,188 +19,19 @@
       <gravity>true</gravity>
       <velocity_decay/>
       <visual name="base_link_visual">
-        <pose>0 0 .025 0 0 3.141592654</pose>
+        <pose>-0.45 -0.285 -0.42 1.57079632679 0 1.57079632679</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://x500/meshes/NXP-HGD-CF.dae</uri>
+            <uri>model://x500withArms/meshes/Holybro-X500-V2-no-landinggear-arm-attachments.dae</uri>
           </mesh>
         </geometry>
-      </visual>
-      <visual name="5010_motor_base_0">
-        <pose>0.174 0.174 .032 0 0 -.45</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Base.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name="5010_motor_base_1">
-        <pose>-0.174 0.174 .032 0 0 -.45</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Base.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name="5010_motor_base_2">
-        <pose>0.174 -0.174 .032 0 0 -.45</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Base.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name="5010_motor_base_3">
-        <pose>-0.174 -0.174 .032 0 0 -.45</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Base.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name="NXP_FMUK66_FRONT">
-        <pose>0.047 .001 .043 1 0 1.57</pose>
-        <cast_shadows>false</cast_shadows>
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>.013 .007</size>
-          </plane>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://x500/materials/textures/nxp.png</albedo_map>
-            </metal>
-          </pbr>
-        </material>
-      </visual>
-      <visual name="NXP_FMUK66_TOP">
-        <pose>-0.023 0 .0515 0 0 -1.57</pose>
-        <cast_shadows>false</cast_shadows>
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>.013 .007</size>
-          </plane>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://x500/materials/textures/nxp.png</albedo_map>
-            </metal>
-          </pbr>
-        </material>
-      </visual>
-      <visual name="RDDRONE_FMUK66_TOP">
-        <pose>-.03 0 .0515 0 0 -1.57</pose>
-        <cast_shadows>false</cast_shadows>
-        <geometry>
-          <plane>
-            <normal>0 0 1</normal>
-            <size>.032 .0034</size>
-          </plane>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>model://x500/materials/textures/rd.png</albedo_map>
-            </metal>
-          </pbr>
-        </material>
       </visual>
       <collision name="base_link_collision_0">
         <pose>0 0 .007 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.35355339059327373 0.35355339059327373 0.05</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0</max_vel>
-            </ode>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="base_link_collision_1">
-        <pose>0 -0.098 -.123 -0.35 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.015 0.015 0.21</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0</max_vel>
-            </ode>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="base_link_collision_2">
-        <pose>0 0.098 -.123 0.35 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.015 0.015 0.21</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0</max_vel>
-            </ode>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="base_link_collision_3">
-        <pose>0 -0.132 -.2195 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.25 0.015 0.015</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode>
-              <min_depth>0.001</min_depth>
-              <max_vel>0</max_vel>
-            </ode>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <collision name="base_link_collision_4">
-        <pose>0 0.132 -.2195 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.25 0.015 0.015</size>
+            <size>0.6 0.6 0.1</size>
           </box>
         </geometry>
         <surface>
@@ -259,15 +90,6 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
-      </visual>
-      <visual name="rotor_0_visual_motor_bell">
-        <pose>0 0 -.032 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Bell.dae</uri>
-          </mesh>
-        </geometry>
       </visual>
       <collision name="rotor_0_collision">
         <pose>0 0 0 0 0 0 </pose>
@@ -332,15 +154,6 @@
           </script>
         </material>
       </visual>
-      <visual name="rotor_1_visual_motor_top">
-        <pose>0 0 -.032 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Bell.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
       <collision name="rotor_1_collision">
         <pose>0 0 0 0 0 0 </pose>
         <geometry>
@@ -404,15 +217,6 @@
           </script>
         </material>
       </visual>
-      <visual name="rotor_2_visual_motor_top">
-        <pose>0 0 -.032 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Bell.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
       <collision name="rotor_2_collision">
         <pose>0 0 0 0 0 0 </pose>
         <geometry>
@@ -475,15 +279,6 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
-      </visual>
-      <visual name="rotor_3_visual_motor_top">
-        <pose>0 0 -.032 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500/meshes/5010Bell.dae</uri>
-          </mesh>
-        </geometry>
       </visual>
       <collision name="rotor_3_collision">
         <pose>0 0 0 0 0 0 </pose>
