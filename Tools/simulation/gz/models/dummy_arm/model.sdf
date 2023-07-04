@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='dummy_arm'>
+	<link name="base_link">
+		<inertial>
+			<mass>0.2</mass>
+			<inertia>
+				<ixx>0.00017218</ixx>
+				<iyy>0.00017218</iyy>
+				<izz>0.000011025</izz>
+			</inertia>
+		</inertial>
+		<gravity>true</gravity>
+      		<velocity_decay/>
+		<visual name="base_link_visual">
+			<pose> 0 0 0 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+		</visual>
+		<collision name="base_link_visual">
+			<pose> 0 0 0 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+			<surface>
+				<contact>
+					<ode>
+						<min_depth>0.001</min_depth>
+						<max_vel>0</max_vel>
+					</ode>
+				</contact>
+				<friction>
+					<ode/>
+				</friction>
+			</surface>
+		</collision>
+	</link>
+  </model>
+</sdf>
