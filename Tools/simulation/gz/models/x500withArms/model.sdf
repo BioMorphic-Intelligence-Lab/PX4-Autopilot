@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='x500'>
+  <model name='x500withArms'>
     <pose>0 0 .24 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
@@ -63,6 +63,50 @@
         <update_rate>250</update_rate>
       </sensor>
     </link>
+    <!-- Dummy Arm 0 -->
+    <include>
+      <name>dummy_arm0</name>
+      <uri>model://dummy_arm</uri>
+      <pose>0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+    </include>
+    <joint name="dummy_arm0_base_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>dummy_arm0::base_link</child>
+      <pose>0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+    </joint>
+    <!-- Dummy Arm 1 -->
+    <include>
+      <name>dummy_arm1</name>
+      <uri>model://dummy_arm</uri>
+      <pose>0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+    </include>
+    <joint name="dummy_arm1_base_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>dummy_arm1::base_link</child>
+      <pose>0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+    </joint>
+    <!-- Dummy Arm 2 -->
+    <include>
+      <name>dummy_arm2</name>
+      <uri>model://dummy_arm</uri>
+      <pose>-0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+    </include>
+    <joint name="dummy_arm2_base_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>dummy_arm2::base_link</child>
+      <pose>-0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+    </joint>
+    <!-- Dummy Arm 3 -->
+    <include>
+      <name>dummy_arm3</name>
+      <uri>model://dummy_arm</uri>
+      <pose>-0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+    </include>
+    <joint name="dummy_arm3_base_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>dummy_arm3::base_link</child>
+      <pose>-0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+    </joint>
     <link name="rotor_0">
       <gravity>true</gravity>
       <self_collide>false</self_collide>
