@@ -67,7 +67,7 @@
     <include>
       <name>dummy_arm0</name>
       <uri>model://dummy_arm</uri>
-      <pose>0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+      <pose>0.1325 0.1325 -0.06 3.1415926 0 -0.78539816339</pose>
     </include>
     <joint name="dummy_arm0_base_joint" type="fixed">
       <parent>base_link</parent>
@@ -78,7 +78,7 @@
     <include>
       <name>dummy_arm1</name>
       <uri>model://dummy_arm</uri>
-      <pose>0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+      <pose>0.1325 -0.1325 -0.06 3.1415926 0 3.92699081699</pose>
     </include>
     <joint name="dummy_arm1_base_joint" type="fixed">
       <parent>base_link</parent>
@@ -89,7 +89,7 @@
     <include>
       <name>dummy_arm2</name>
       <uri>model://dummy_arm</uri>
-      <pose>-0.1325 -0.1325 -0.06 3.1415926 0 0</pose>
+      <pose>-0.1325 -0.1325 -0.06 3.1415926 0 2.35619449019</pose>
     </include>
     <joint name="dummy_arm2_base_joint" type="fixed">
       <parent>base_link</parent>
@@ -100,7 +100,7 @@
     <include>
       <name>dummy_arm3</name>
       <uri>model://dummy_arm</uri>
-      <pose>-0.1325 0.1325 -0.06 3.1415926 0 0</pose>
+      <pose>-0.1325 0.1325 -0.06 3.1415926 0 0.78539816339</pose>
     </include>
     <joint name="dummy_arm3_base_joint" type="fixed">
       <parent>base_link</parent>

@@ -3,11 +3,11 @@
   <model name='dummy_arm'>
 	<link name="base_link">
 		<inertial>
-			<mass>0.2</mass>
+			<mass>0.05</mass>
 			<inertia>
-				<ixx>0.00017218</ixx>
-				<iyy>0.00017218</iyy>
-				<izz>0.000011025</izz>
+				<ixx>0.000043045</ixx>
+				<iyy>0.000043045</iyy>
+				<izz>0.000002756</izz>
 			</inertia>
 		</inertial>
 		<gravity>true</gravity>
@@ -42,5 +42,163 @@
 			</surface>
 		</collision>
 	</link>
+	<link name="link1">
+		<inertial>
+			<mass>0.05</mass>
+			<inertia>
+				<ixx>0.000043045</ixx>
+				<iyy>0.000043045</iyy>
+				<izz>0.000002756</izz>
+			</inertia>
+		</inertial>
+		<gravity>true</gravity>
+      		<velocity_decay/>
+		<visual name="link1_visual">
+			<pose> 0 0 0.1 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+		</visual>
+		<collision name="link1_collision">
+			<pose> 0 0 0.1 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+			<surface>
+				<contact>
+					<ode>
+						<min_depth>0.001</min_depth>
+						<max_vel>0</max_vel>
+					</ode>
+				</contact>
+				<friction>
+					<ode/>
+				</friction>
+			</surface>
+		</collision>
+	</link>
+	<joint name="link1_joint" type="revolute">
+		<pose>0 0 0.05 0 0 0</pose>
+		<parent>base_link</parent>
+		<child>link1</child>
+		<axis>
+			<xyz>1 0 0</xyz>
+			<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+			</limit>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>1</spring_stiffness>
+			</dynamics>
+		</axis>
+	</joint>
+	<link name="link2">
+		<inertial>
+			<mass>0.05</mass>
+			<inertia>
+				<ixx>0.000043045</ixx>
+				<iyy>0.000043045</iyy>
+				<izz>0.000002756</izz>
+			</inertia>
+		</inertial>
+		<gravity>true</gravity>
+      		<velocity_decay/>
+		<visual name="link2_visual">
+			<pose> 0 0 0.2 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+		</visual>
+		<collision name="link2_collision">
+			<pose> 0 0 0.2 0 0 0</pose>
+			<geometry>
+				<cylinder>
+					<radius>0.0105</radius>
+					<length>0.1</length>
+				</cylinder>
+			</geometry>
+			<surface>
+				<contact>
+					<ode>
+						<min_depth>0.001</min_depth>
+						<max_vel>0</max_vel>
+					</ode>
+				</contact>
+				<friction>
+					<ode/>
+				</friction>
+			</surface>
+		</collision>
+	</link>
+	<joint name="link2_joint" type="revolute">
+		<pose>0 0 0.15 0 0 0</pose>
+		<parent>link1</parent>
+		<child>link2</child>
+		<axis>
+			<xyz>1 0 0</xyz>
+			<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+			</limit>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>1</spring_stiffness>
+			</dynamics>
+		</axis>
+	</joint>
+	<link name="ee">
+		<inertial>
+			<mass>0.01</mass>
+			<inertia>
+				<ixx>0.0000006667</ixx>
+				<iyy>0.0000006667</iyy>
+				<izz>0.0000006667</izz>
+			</inertia>
+		</inertial>
+		<gravity>true</gravity>
+      		<velocity_decay/>
+		<visual name="ee_visual">
+			<pose> 0 0 0.25 0 0 0</pose>
+			<geometry>
+				<sphere>
+					<radius>0.02</radius>
+				</sphere>
+			</geometry>
+		</visual>
+		<collision name="ee_collision">
+			<pose> 0 0 0.25 0 0 0</pose>
+			<geometry>
+				<sphere>
+					<radius>0.02</radius>
+				</sphere>
+			</geometry>
+			<surface>
+				<contact>
+					<ode>
+						<min_depth>0.001</min_depth>
+						<max_vel>0</max_vel>
+					</ode>
+				</contact>
+				<friction>
+					<ode/>
+				</friction>
+			</surface>
+		</collision>
+	</link>
+	<joint name="ee_joint" type="fixed">
+		<pose>0 0 0.25 0 0 0</pose>
+		<parent>link2</parent>
+		<child>ee</child>
+	</joint>
   </model>
 </sdf>
