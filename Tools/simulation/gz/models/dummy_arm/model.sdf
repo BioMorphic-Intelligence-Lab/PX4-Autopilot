@@ -3,6 +3,44 @@
   <model name='dummy_arm'>
 	<link name="base_link">
 		<inertial>
+			<mass>0.000000001</mass>
+			<inertia>
+				<ixx>0.000000001</ixx>
+				<iyy>0.000000001</iyy>
+				<izz>0.000000001</izz>
+			</inertia>
+		</inertial>
+		<pose> 0 0 0 0 0 0</pose>
+	</link>
+	<link name="base_link_intermediate">
+		<inertial>
+			<mass>0.000000001</mass>
+			<inertia>
+				<ixx>0.000000001</ixx>
+				<iyy>0.000000001</iyy>
+				<izz>0.000000001</izz>
+			</inertia>
+		</inertial>
+		<pose> 0 0 0 0 0 0</pose>
+	</link>
+	<joint name="base_joint" type="revolute">
+		<pose>0 0 -0.05 0 0 0</pose>
+		<parent>base_link</parent>
+		<child>base_link_intermediate</child>
+		<axis>
+			<xyz>0 0 1</xyz>
+			<limit>
+				<lower>-1.57079632679</lower>
+				<upper>1.57079632679</upper>
+			</limit>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0.45</spring_stiffness>
+			</dynamics>
+		</axis>
+	</joint>
+	<link name="link0">
+		<inertial>
 			<mass>0.05</mass>
 			<inertia>
 				<ixx>0.000043045</ixx>
@@ -12,7 +50,7 @@
 		</inertial>
 		<gravity>true</gravity>
       		<velocity_decay/>
-		<visual name="base_link_visual">
+		<visual name="link0_visual">
 			<pose> 0 0 0 0 0 0</pose>
 			<geometry>
 				<cylinder>
@@ -21,7 +59,7 @@
 				</cylinder>
 			</geometry>
 		</visual>
-		<collision name="base_link_visual">
+		<collision name="link0_collision">
 			<pose> 0 0 0 0 0 0</pose>
 			<geometry>
 				<cylinder>
@@ -42,6 +80,22 @@
 			</surface>
 		</collision>
 	</link>
+	<joint name="link0_joint" type="revolute">
+		<pose>0 0 -0.05 0 0 0</pose>
+		<parent>base_link</parent>
+		<child>link0</child>
+		<axis>
+			<xyz>1 0 0</xyz>
+			<limit>
+				<lower>-1.57079632679</lower>
+				<upper>1.57079632679</upper>
+			</limit>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0.45</spring_stiffness>
+			</dynamics>
+		</axis>
+	</joint>
 	<link name="link1">
 		<inertial>
 			<mass>0.05</mass>
@@ -85,17 +139,17 @@
 	</link>
 	<joint name="link1_joint" type="revolute">
 		<pose>0 0 0.05 0 0 0</pose>
-		<parent>base_link</parent>
+		<parent>link0</parent>
 		<child>link1</child>
 		<axis>
 			<xyz>1 0 0</xyz>
 			<limit>
-				<lower>-1e+16</lower>
-				<upper>1e+16</upper>
+				<lower>-1.57079632679</lower>
+				<upper>1.57079632679</upper>
 			</limit>
 			<dynamics>
 				<spring_reference>0</spring_reference>
-				<spring_stiffness>1</spring_stiffness>
+				<spring_stiffness>0.45</spring_stiffness>
 			</dynamics>
 		</axis>
 	</joint>
@@ -147,12 +201,12 @@
 		<axis>
 			<xyz>1 0 0</xyz>
 			<limit>
-				<lower>-1e+16</lower>
-				<upper>1e+16</upper>
+				<lower>-1.57079632679</lower>
+				<upper>1.57079632679</upper>
 			</limit>
 			<dynamics>
 				<spring_reference>0</spring_reference>
-				<spring_stiffness>1</spring_stiffness>
+				<spring_stiffness>0.45</spring_stiffness>
 			</dynamics>
 		</axis>
 	</joint>
