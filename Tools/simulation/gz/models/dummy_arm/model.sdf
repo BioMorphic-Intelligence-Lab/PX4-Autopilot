@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='dummy_arm'>
+  <model name='dummy_arm' xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<link name="base_link">
 		<inertial>
 			<mass>0.000000001</mass>
@@ -254,5 +254,9 @@
 		<parent>link2</parent>
 		<child>ee</child>
 	</joint>
+
+	 <!-- Joint states plugin -->
+	<plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher"/>
+
   </model>
 </sdf>

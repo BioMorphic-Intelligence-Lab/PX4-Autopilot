@@ -423,5 +423,32 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
+    <plugin filename="JointWrench" name="gz::sim::systems::JointWrench">
+      <!-- Dumma Arm 0 -->
+      <joint_name>dummy_arm0::base_joint</joint_name>
+      <joint_name>dummy_arm0::link0_joint</joint_name>
+      <joint_name>dummy_arm0::link1_joint</joint_name>
+      <joint_name>dummy_arm0::link2_joint</joint_name>
+      <!-- Dumma Arm 1 -->
+      <joint_name>dummy_arm1::base_joint</joint_name>
+      <joint_name>dummy_arm1::link0_joint</joint_name>
+      <joint_name>dummy_arm1::link1_joint</joint_name>
+      <joint_name>dummy_arm1::link2_joint</joint_name>
+      <!-- Dumma Arm 2 -->
+      <joint_name>dummy_arm2::base_joint</joint_name>
+      <joint_name>dummy_arm2::link0_joint</joint_name>
+      <joint_name>dummy_arm2::link1_joint</joint_name>
+      <joint_name>dummy_arm2::link2_joint</joint_name>
+      <!-- Dumma Arm 3 -->
+      <joint_name>dummy_arm3::base_joint</joint_name>
+      <joint_name>dummy_arm3::link0_joint</joint_name>
+      <joint_name>dummy_arm3::link1_joint</joint_name>
+      <joint_name>dummy_arm3::link2_joint</joint_name>
+      <!-- Multiplier from commanded torque to enacted
+           torque at each joint. -->
+      <multiplier>1.0</multiplier>
+      <!-- GZ Topic to listen to -->
+      <topic>/flying_squid/commanded_wrench</topic>
+    </plugin>
   </model>
 </sdf>
