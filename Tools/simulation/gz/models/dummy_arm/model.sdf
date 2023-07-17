@@ -248,6 +248,11 @@
 				</friction>
 			</surface>
 		</collision>
+		<sensor name='ee_contact' type='contact'>
+			<contact>
+				<collision>ee_collision</collision>
+			</contact>
+		</sensor>
 	</link>
 	<joint name="ee_joint" type="fixed">
 		<pose>0 0 0.25 0 0 0</pose>
@@ -256,7 +261,8 @@
 	</joint>
 
 	 <!-- Joint states plugin -->
-	<plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher"/>
+	<plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"/>
+	<plugin filename="ContactSensor" name="gz::sim::systems::ContactSensor"/>
 
   </model>
 </sdf>
