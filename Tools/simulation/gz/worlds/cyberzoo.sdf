@@ -67,6 +67,13 @@
         <iterations>1</iterations>
       </plugin>
       <plugin name='Entity tree' filename='EntityTree'/>
+
+      <!-- Visualize Contacts -->
+      <plugin filename="VisualizeContacts" name="Visualize Contacts">
+        <gz-gui>
+          <property key="state" type="string">docked</property>
+        </gz-gui>
+      </plugin>
     </gui>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>

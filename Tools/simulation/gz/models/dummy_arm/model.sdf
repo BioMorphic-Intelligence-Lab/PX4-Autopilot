@@ -248,7 +248,8 @@
 				</friction>
 			</surface>
 		</collision>
-		<sensor name='ee_contact' type='contact'>
+
+		<sensor name='contact_sensor' type='contact'>
 			<contact>
 				<collision>ee_collision</collision>
 			</contact>
@@ -262,7 +263,9 @@
 
 	 <!-- Joint states plugin -->
 	<plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"/>
-	<plugin filename="ContactSensor" name="gz::sim::systems::ContactSensor"/>
-
+	<!-- Pre-Made Contact Sensor-->
+	<!--<plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"> </plugin>-->
+	<!-- Custom Contact Sensor -->
+	<plugin filename="PressureSensor" name="gz::sim::systems::PressureSensor"/>
   </model>
 </sdf>

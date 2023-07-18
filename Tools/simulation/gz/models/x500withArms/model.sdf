@@ -447,8 +447,6 @@
       <!-- Multiplier from commanded torque to enacted
            torque at each joint. -->
       <multiplier>1.0</multiplier>
-      <!-- GZ Topic to listen to -->
-      <topic>/flying_squid/commanded_wrench</topic>
     </plugin>
   </model>
 </sdf>
