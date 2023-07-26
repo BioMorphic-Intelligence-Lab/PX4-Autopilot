@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version="1.6">
-  <world name="cyberzoo">
+  <world name="cyberzoo_with_walls">
     <physics type="ode">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
@@ -156,6 +156,11 @@
     <include>
       <uri>model://cyberzoo</uri>
       <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://wall</uri>
+      <pose>2 0 0 1.5707963 0 1.57079632679</pose>
     </include>
   </world>
 </sdf>
