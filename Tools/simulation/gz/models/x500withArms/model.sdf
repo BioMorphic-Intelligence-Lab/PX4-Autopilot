@@ -46,18 +46,18 @@
           </friction>
         </surface>
       </collision>
-      <sensor name="air_pressure_sensor" type="air_pressure">
+      <!--<sensor name="air_pressure_sensor" type="air_pressure">
         <always_on>1</always_on>
         <update_rate>50</update_rate>
         <air_pressure>
           <pressure>
             <noise type="gaussian">
               <mean>0</mean>
-              <stddev>0<!--0.01--></stddev>
+              <stddev>0.01</stddev>
             </noise>
           </pressure>
         </air_pressure>
-      </sensor>
+      </sensor>-->
       <sensor name="imu_sensor" type="imu">
         <always_on>1</always_on>
         <update_rate>250</update_rate>
@@ -449,14 +449,7 @@
       <multiplier>1.0</multiplier>
     </plugin>
 
-    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
-      <publish_link_pose>false</publish_link_pose>
-      <publish_visual_pose>false</publish_visual_pose>
-      <publish_collision_pose>false</publish_collision_pose>
-      <publish_sensor_pose>false</publish_sensor_pose>
-      <publish_model_pose>true</publish_model_pose>
-      <publish_nested_model_pose>false</publish_nested_model_pose>
-      <update_frequency>150</update_frequency>
+    <plugin filename="MocapPub" name="gz::sim::systems::MocapPub">
     </plugin>
   </model>
 </sdf>
