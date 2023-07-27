@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='wall' xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+	<link name="base_link">
+		<inertial>
+			<mass>0.025</mass>
+			<inertia>
+				<ixx>0.000013333333333333335</ixx>
+				<iyy>0.000013333333333333335</iyy>
+				<izz>0.000013333333333333335</izz>
+			</inertia>
+		</inertial>
+		<gravity>true</gravity>
+      		<velocity_decay/>
+		<visual name="base_link_visual">
+			<pose> 0 0 0 0 0 0</pose>
+			<geometry>
+				<box>
+					<size>0.3 0.3 0.3</size>
+				</box>
+			</geometry>
+		</visual>
+		<collision name="base_link_collision">
+			<pose> 0 0 0 0 0 0</pose>
+			<geometry>
+				<box>
+					<size>0.3 0.3 0.3</size>
+				</box>
+			</geometry>
+			<surface>
+				<contact>
+					<ode>
+						<min_depth>0.001</min_depth>
+						<max_vel>0</max_vel>
+					</ode>
+				</contact>
+				<friction>
+					<ode/>
+				</friction>
+			</surface>
+		</collision>
+	</link>
+  </model>
+</sdf>
