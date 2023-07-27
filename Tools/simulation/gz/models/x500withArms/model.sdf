@@ -53,7 +53,7 @@
           <pressure>
             <noise type="gaussian">
               <mean>0</mean>
-              <stddev>0.01</stddev>
+              <stddev>0<!--0.01--></stddev>
             </noise>
           </pressure>
         </air_pressure>
@@ -447,6 +447,16 @@
       <!-- Multiplier from commanded torque to enacted
            torque at each joint. -->
       <multiplier>1.0</multiplier>
+    </plugin>
+
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>false</publish_link_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <publish_sensor_pose>false</publish_sensor_pose>
+      <publish_model_pose>true</publish_model_pose>
+      <publish_nested_model_pose>false</publish_nested_model_pose>
+      <update_frequency>150</update_frequency>
     </plugin>
   </model>
 </sdf>
