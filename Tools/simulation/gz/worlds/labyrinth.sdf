@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version="1.6">
-  <world name="cyberzoo_with_walls">
+  <world name="cyberzoo_labyrinth">
     <physics type="ode">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
@@ -66,14 +66,14 @@
         <real_time_factor>1</real_time_factor>
         <iterations>1</iterations>
       </plugin>
-      <plugin name='Entity tree' filename='EntityTree'/>
+      <!--<plugin name='Entity tree' filename='EntityTree'/>-->
 
-      <!-- Visualize Contacts -->
+      <!-- Visualize Contacts
       <plugin filename="VisualizeContacts" name="Visualize Contacts">
         <gz-gui>
           <property key="state" type="string">docked</property>
         </gz-gui>
-      </plugin>
+      </plugin>-->
     </gui>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
@@ -154,13 +154,8 @@
     </light>
 
     <include>
-      <uri>model://cyberzoo</uri>
-      <pose>0 0 0 0 0 0</pose>
-    </include>
-
-    <include>
       <uri>model://wall</uri>
-      <pose>2 0 0 1.5707963 0 1.57079632679</pose>
+      <pose>2 0 3 1.5707963 0 1.57079632679</pose>
     </include>
   </world>
 </sdf>
