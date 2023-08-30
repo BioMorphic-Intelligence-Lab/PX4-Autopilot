@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version="1.6">
-  <world name="cyberzoo">
+  <world name="cyberzoo_with_wall">
     <physics type="ode">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
@@ -75,7 +75,7 @@
         </gz-gui>
       </plugin>
     </gui>
-    <gravity>0 0 -9.81</gravity>
+    <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
     <scene>
@@ -156,6 +156,11 @@
     <include>
       <uri>model://cyberzoo</uri>
       <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://wall</uri>
+      <pose>2 0 0 1.5707963 0 1.57079632679</pose>
     </include>
   </world>
 </sdf>
