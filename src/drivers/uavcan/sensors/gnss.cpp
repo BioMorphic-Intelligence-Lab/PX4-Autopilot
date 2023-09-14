@@ -467,38 +467,12 @@ void UavcanGnssBridge::update()
 // to work.
 void UavcanGnssBridge::handleInjectDataTopic()
 {
-	// We don't want to call copy again further down if we have already done a
-	// copy in the selection process.
-	bool already_copied = false;
-	gps_inject_data_s msg;
-
-	// If there has not been a valid RTCM message for a while, try to switch to a different RTCM link
-	if ((hrt_absolute_time() - _last_rtcm_injection_time) > 5_s) {
-
-		for (int instance = 0; instance < _orb_inject_data_sub.size(); instance++) {
-			const bool exists = _orb_inject_data_sub[instance].advertised();
-
-			if (exists) {
-				if (_orb_inject_data_sub[instance].copy(&msg)) {
-					if ((hrt_absolute_time() - msg.timestamp) < 5_s) {
-						// Remember that we already did a copy on this instance.
-						already_copied = true;
-						_selected_rtcm_instance = instance;
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	bool updated = already_copied;
-
 	// Limit maximum number of GPS injections to 8 since usually
 	// GPS injections should consist of 1-4 packets (GPS, Glonass, BeiDou, Galileo).
 	// Looking at 8 packets thus guarantees, that at least a full injection
 	// data set is evaluated.
-	// Moving Base reuires a higher rate, so we allow up to 8 packets.
-	const size_t max_num_injections = gps_inject_data_s::ORB_QUEUE_LENGTH;
+	static constexpr size_t MAX_NUM_INJECTIONS = gps_inject_data_s::ORB_QUEUE_LENGTH;;
+
 	size_t num_injections = 0;
 
 	do {
