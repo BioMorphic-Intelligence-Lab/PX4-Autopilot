@@ -23,11 +23,11 @@ publications:
   # - topic: /fmu/out/vehicle_angular_velocity
   #   type: px4_msgs::msg::VehicleAngularVelocity
 
-  - topic: /fmu/out/vehicle_attitude
-    type: px4_msgs::msg::VehicleAttitude
+  #- topic: /fmu/out/vehicle_attitude
+  #  type: px4_msgs::msg::VehicleAttitude
 
-  - topic: /fmu/out/vehicle_control_mode
-    type: px4_msgs::msg::VehicleControlMode
+  #- topic: /fmu/out/vehicle_control_mode
+  #  type: px4_msgs::msg::VehicleControlMode
 
   #- topic: /fmu/out/vehicle_global_position
   #  type: px4_msgs::msg::VehicleGlobalPosition
@@ -67,20 +67,20 @@ subscriptions:
   - topic: /fmu/in/trajectory_setpoint
     type: px4_msgs::msg::TrajectorySetpoint
 
-  - topic: /fmu/in/vehicle_attitude_setpoint
-    type: px4_msgs::msg::VehicleAttitudeSetpoint
+  #- topic: /fmu/in/vehicle_attitude_setpoint
+  #  type: px4_msgs::msg::VehicleAttitudeSetpoint
 
   #- topic: /fmu/in/vehicle_mocap_odometry
   #  type: px4_msgs::msg::VehicleOdometry
 
-  - topic: /fmu/in/vehicle_rates_setpoint
-    type: px4_msgs::msg::VehicleRatesSetpoint
+  #- topic: /fmu/in/vehicle_rates_setpoint
+  #  type: px4_msgs::msg::VehicleRatesSetpoint
 
   - topic: /fmu/in/vehicle_visual_odometry
     type: px4_msgs::msg::VehicleOdometry
 
-  - topic: /fmu/in/vehicle_command
-    type: px4_msgs::msg::VehicleCommand
+  #- topic: /fmu/in/vehicle_command
+  #  type: px4_msgs::msg::VehicleCommand
 
   #- topic: /fmu/in/vehicle_trajectory_bezier
   #  type: px4_msgs::msg::VehicleTrajectoryBezier
