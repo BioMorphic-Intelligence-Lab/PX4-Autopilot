@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="brick_wall">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name="brick_wall">
+      <visual name="brick_wall_visual">
+        <geometry>
+          <mesh>
+            <uri>model://brick_wall/brick_wall.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="brick_wall_collision">
+        <pose>0 0 1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 4.00 2.0</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
