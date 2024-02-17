@@ -1,48 +1,12 @@
 <?xml version='1.0'?>
 <sdf version="1.6">
-  <world name="cyberzoo_orange_poles_panels" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+  <world name="cyberzoo_orange_poles_corridor">
+    
     <physics type="ode">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
       <real_time_update_rate>250</real_time_update_rate>
     </physics>
-    
-    <!-- Without lighting -->
-    <scene>
-      <ambient>0.9 0.9 0.9 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <origin_visual>false</origin_visual>
-      <shadows>false</shadows>
-    </scene>
-    
-    <!-- With light and shadows -->
-    <!-- <scene>
-      <ambient>0.6 0.6 0.6 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <origin_visual>false</origin_visual>
-    </scene>
-    <light name='toplight' type='directional'>
-      <cast_shadows>true</cast_shadows>
-      <pose>0 0 10 0 0 0</pose>
-      <diffuse>0.9 0.9 0.9 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <attenuation>
-        <range>1000</range>
-        <constant>0.9</constant>
-        <linear>0.01</linear>
-        <quadratic>0.001</quadratic>
-      </attenuation>
-      <direction>0 0 -1</direction>
-    </light> -->
-    
-    <spherical_coordinates>
-      <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>51.9906361</latitude_deg>
-      <longitude_deg>4.3767874</longitude_deg>
-      <elevation>45.110</elevation>
-      <heading_deg>180</heading_deg><!-- Temporary fix for issue https://bitbucket.org/osrf/gazebo/issues/2022/default-sphericalcoordinates-frame-should -->
-    </spherical_coordinates>
 
     <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
     <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
@@ -53,7 +17,7 @@
     <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'>
       <render_engine>ogre2</render_engine>
     </plugin>
-    
+   
     <gui fullscreen='false'>
       <plugin name='3D View' filename='GzScene3D'>
         <gz-gui>
@@ -124,7 +88,7 @@
       <background>0.7 0.7 0.7 1</background>
       <shadows>true</shadows>
     </scene>
-
+    
     <model name='ground_plane'>
       <static>true</static>
       <link name='link'>
@@ -174,12 +138,12 @@
       <pose>0 0 0 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
-
+    
     <light name='sunUTC' type='directional'>
       <pose>0 0 500 0 -0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>1</intensity>
-      <direction>0.001 0.625 -0.78</direction>
+      <direction>0.1 0.1 -0.8</direction>
       <diffuse>0.904 0.904 0.904 1</diffuse>
       <specular>0.271 0.271 0.271 1</specular>
       <attenuation>
@@ -195,7 +159,7 @@
       </spot>
     </light>
 
-     <include>
+    <include>
       <uri>model://cyberzoo</uri>
       <pose>0 0 0 0 0 1.57079632679</pose>
     </include>
@@ -275,17 +239,6 @@
       <name>orange_pole6</name>
       <pose>-4 3 0 0 0 0</pose>
     </include>
-    
-    <!--
-    <include>
-      <uri>model://metal_panel1</uri>
-      <name>metal_panel1_1</name>
-      <pose>-2.95 -1.48 0 0 0 1.31</pose>
-    </include>
-    <include>
-      <uri>model://metal_panel2</uri>
-      <name>metal_panel2_1</name>
-      <pose>2.67 1.93 0 0 0 1.40</pose>
-    </include>-->
+
   </world>
 </sdf>
