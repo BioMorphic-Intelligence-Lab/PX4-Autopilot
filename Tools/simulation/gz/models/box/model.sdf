@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='wall' xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <model name='box' xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 
 	<link name="base_link">
