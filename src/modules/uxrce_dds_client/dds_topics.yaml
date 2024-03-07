@@ -17,8 +17,8 @@ publications:
  # - topic: /fmu/out/sensor_combined
  #   type: px4_msgs::msg::SensorCombined
 
-  - topic: /fmu/out/timesync_status
-    type: px4_msgs::msg::TimesyncStatus
+  #- topic: /fmu/out/timesync_status
+  #  type: px4_msgs::msg::TimesyncStatus
 
   # - topic: /fmu/out/vehicle_angular_velocity
   #   type: px4_msgs::msg::VehicleAngularVelocity
@@ -37,6 +37,9 @@ publications:
 
   #- topic: /fmu/out/vehicle_local_position
   #  type: px4_msgs::msg::VehicleLocalPosition
+
+  - topic: /fmu/out/battery_status
+    type: px4_msgs::msg::BatteryStatus
 
   - topic: /fmu/out/vehicle_odometry
     type: px4_msgs::msg::VehicleOdometry
@@ -63,6 +66,9 @@ subscriptions:
 
   #- topic: /fmu/in/telemetry_status
   #  type: px4_msgs::msg::TelemetryStatus
+
+  - topic: /fmu/in/vehicle_attitude_setpoint
+    type: px4_msgs::msg::TrajectorySetpoint
 
   - topic: /fmu/in/trajectory_setpoint
     type: px4_msgs::msg::TrajectorySetpoint
